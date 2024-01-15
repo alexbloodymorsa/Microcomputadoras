@@ -1,0 +1,63 @@
+processor 16f877
+include<p16f877.inc>
+
+valor1 equ 0X24
+valor2 equ 0X25
+valor3 equ 0X26
+cte1 equ 20h
+cte2 equ 50h
+cte3 equ 60h
+
+	ORG 0
+	GOTO inicio
+	ORG 5
+
+inicio
+	BSF STATUS,RP0
+	BCF STATUS,RP1
+	CLRF ADCON1	
+	BSF TRISE,0
+	BCF TRISC,1
+	BCF TRISC,2
+	MOVLW D'255'
+	MOVWF PR2
+	
+	BCF STATUS,RP0
+	MOVLW B'11101001'
+	MOVWF ADCON0
+	MOVLW B'00001100'
+	MOVWF CCP2CON
+	MOVLW B'00000101'
+	MOVWF T2CON
+
+REPITE
+	BSF ADCON0,2  			
+	CALL RETARDO		
+ESPERA
+	BTFSC ADCON0,2 		
+	GOTO ESPERA			
+	MOVF ADRESH,W 		
+	MOVWF CCPR2L
+	CALL RETARDO
+	GOTO REPITE
+
+
+RETARDO 
+	MOVLW cte1
+ 	MOVWF valor1
+tres 
+	MOVLW cte2
+	MOVWF valor2
+dos 
+	MOVLW cte3
+	MOVWF valor3
+uno 
+	DECFSZ valor3
+ 	GOTO uno
+	DECFSZ valor2
+	GOTO dos
+	DECFSZ valor1
+	GOTO tres
+	RETURN
+
+END

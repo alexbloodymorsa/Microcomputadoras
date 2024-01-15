@@ -1,0 +1,166 @@
+004-005 @WRITE_PROGRAM_MEMORY.P1
+004-005 @READ_PROGRAM_MEMORY.P2
+008     PSP_DATA
+015     CCP_1_LOW
+015-016 CCP_1
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B-01C CCP_2
+01C     CCP_2_HIGH
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @INTERRUPT_AREA
+028     @INTERRUPT_AREA
+029     @TRIS_C
+02A     LCD_ADDR
+02B     lcd_total_rows
+02C     lcd_total_columns
+02D     new_row_request
+02E     BACKLIGHT_LED
+02F     lcd_gotoxy.data
+030     contador
+031     avanza
+032     i
+033     intensidad
+034     bandera_derecha
+035     bandera_izquierda
+036     bandera_luz
+037     bandera_maniobra
+038     contador_izquierda
+039     contador_derecha
+03A-03D metros
+03E     valor
+03F     lcd_init.ADDR
+03F     MAIN.@SCRATCH
+040     lcd_init.col
+041     lcd_init.row
+042     lcd_init.i
+043     lcd_init.@SCRATCH
+052-055 @ADDFF.P1
+052     clock_isr.@SCRATCH
+053-056 @PRINTF_L32D_84FPFPF.P1
+056-059 @ADDFF.P1
+057     @PRINTF_L32D_84FPFPF.P1
+058     @PRINTF_L32D_84FPFPF.@SCRATCH
+059     @PRINTF_L32D_84FPFPF.@SCRATCH
+05A     @PRINTF_L32D_84FPFPF.@SCRATCH
+05A     @ADDFF.@SCRATCH
+05B     @PRINTF_L32D_84FPFPF.@SCRATCH
+05B     @ADDFF.@SCRATCH
+05C     @PRINTF_L32D_84FPFPF.@SCRATCH
+05C     @ADDFF.@SCRATCH
+05D     @PRINTF_L32D_84FPFPF.@SCRATCH
+05D     @ADDFF.@SCRATCH
+05E     @PRINTF_L32D_84FPFPF.@SCRATCH
+05E     @ADDFF.@SCRATCH
+05F     @PRINTF_L32D_84FPFPF.@SCRATCH
+05F     @ADDFF.@SCRATCH
+060-063 @FTOSD.P1
+060-063 @DIV3232.P2
+060-063 @MULFF.P3
+060     LCD_PUTC.in_data
+060     @ADDFF.@SCRATCH
+061     @delay_ms1.P1
+061     lcd_gotoxy.x
+061     @ADDFF.@SCRATCH
+062     lcd_gotoxy.y
+063     lcd_gotoxy.row
+064-067 @DIV3232.P1
+064     lcd_gotoxy.column
+064-067 @MULFF.P1
+064     @FTOSD.@SCRATCH
+065     lcd_gotoxy.row_addr
+066     lcd_gotoxy.lcd_address
+067     lcd_gotoxy.@SCRATCH
+068     lcd_send_byte.data
+068     @MULFF.@SCRATCH
+068     @DIV3232.@SCRATCH
+069     lcd_send_byte.type
+069     @MULFF.@SCRATCH
+069     @DIV3232.@SCRATCH
+06A     lcd_send_byte.@SCRATCH
+06A     @MULFF.@SCRATCH
+06A     @DIV3232.@SCRATCH
+06B     i2c_send_nibble.data
+06B     @MULFF.@SCRATCH
+06B     @DIV3232.@SCRATCH
+06C     i2c_send_nibble.type
+06C     @MULFF.@SCRATCH
+06C     @DIV3232.@SCRATCH
+06D     i2c_send_nibble.@SCRATCH
+06E     i2c_send_nibble.@SCRATCH
+06F     i2c_send_nibble.@SCRATCH
+070     i2c_send_nibble.@SCRATCH
+071     @I2C_WRITEU_1.P1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07B     @SCRATCH
+07F     @INTERRUPT_AREA
+0FF     @INTERRUPT_AREA
+10D-10E @READ_PROGRAM_MEMORY.P1
+10D-10E @WRITE_PROGRAM_MEMORY.P2
+17F     @INTERRUPT_AREA
+1FF     @INTERRUPT_AREA
+27F     @INTERRUPT_AREA
+2FF     @INTERRUPT_AREA
+37F     @INTERRUPT_AREA
+3FF     @INTERRUPT_AREA
+
+0153  @delay_ms1
+009C  @I2C_WRITEU_1
+00AC  i2c_send_nibble
+00FD  lcd_send_byte
+0167  lcd_clear
+0033  LCD_INIT_STRING
+0589  lcd_init
+011B  lcd_gotoxy
+0171  LCD_PUTC
+1F00  loader16F877
+0480  clock_isr
+003B  @const100
+0197  @MULFF
+020E  @FTOSD
+022F  @DIV3232
+0271  @PRINTF_L32D_84FPFPF
+033D  @ADDFF
+050F  MAIN
+004C  @const117
+0058  @const118
+0066  @const119
+0075  @const120
+0081  @const121
+008F  @const122
+050F  @cinit
+
+Project Files:
+    main.c
+    ..\..\..\..\..\Program Files (x86)\PICC\devices\16f877.h
+    ..\..\..\..\..\Program Files (x86)\PICC\drivers\i2c_LCD.c
+
+Units:
+    C:\Users\ABACIT\Documents\mplab\main\main.c (main)
+
+Compiler Settings:
+    Processor:      PIC16F877
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      0
+    Short,Int,Long: 1,8,16
+
+Output Files:
+    Errors:      C:\Users\ABACIT\Documents\mplab\main\main.err
+    Ext Symbols: C:\Users\ABACIT\Documents\mplab\main\main.esym
+    INHX8:       C:\Users\ABACIT\Documents\mplab\main\main.hex
+    Symbols:     C:\Users\ABACIT\Documents\mplab\main\main.sym
+    List:        C:\Users\ABACIT\Documents\mplab\main\main.lst
+    Debug/COFF:  C:\Users\ABACIT\Documents\mplab\main\main.cof
+    Call Tree:   main.tre
+    Statistics:  main.sta

@@ -1,0 +1,71 @@
+
+ROM used: 1921 (23%)
+          2049 (25%) including unused fragments
+
+          3 Average locations per line
+          9 Average locations per statement
+
+RAM used: 38 (10%) at main() level
+          88 (24%) worst case
+
+Stack used: 12 worst case (out of 1 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  208   132  63  main.c
+  281     0   0  ..\..\..\..\..\Program Files (x86)\PICC\devices\16f877.h
+  211    77  37  ..\..\..\..\..\Program Files (x86)\PICC\drivers\i2c_LCD.c
+----- -----
+  700   209 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     20   1   1             @delay_ms1
+0     16   1   1             @I2C_WRITEU_1
+0     81   4   6   574  5.9  i2c_send_nibble
+0     30   2   3   149  2.8  lcd_send_byte
+0     10   1   0    61  1.9  lcd_clear
+0      8   0   0             @const74
+ Inline        5   902  5.8  lcd_init
+0     56   3   7   681  8.0  lcd_gotoxy
+0     38   2   1   310  5.9  LCD_PUTC
+3      1   0   0     5  1.0  loader16F877
+0    143   7   1  1046  6.6  clock_isr
+0     17   1   0             @const100
+0    119   6  13             @MULFF
+0     33   2   5             @FTOSD
+0     66   3  13             @DIV3232
+0    204  11  13             @PRINTF_L32D_84FPFPF
+0    323  17  16             @ADDFF
+0    625  33   1  3382  5.4  MAIN
+0     12   1   0             @const117
+0     14   1   0             @const118
+0     15   1   0             @const119
+0     12   1   0             @const120
+0     14   1   0             @const121
+0     13   1   0             @const122
+
+Program metrics:
+    Functions               9
+    Statements              209
+    Comments                299
+    Volume (V)              9825
+    Difficilty (D)          42.8
+    Effort to implement (E) 420828
+    Time to implement (T)   6 hours, 30 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   33
+    Maintainability (MI)    107
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-00032    47  0  
+00033-007FF  1869  128  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01EFF     0  1792  
+01F00-01FFF     1  255  
+
+
+
